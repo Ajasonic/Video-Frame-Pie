@@ -1,0 +1,20 @@
+import cv2
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+
+folder = 'test'  
+os.mkdir(folder)
+vidcap = cv2.VideoCapture ("sample_video.mp4")
+success, image = vidcap.read()
+count=0;
+success = True
+while success:
+    success, image = vidcap.read()
+    if not success:
+        break
+    cv2.imwrite(os.path.join(folder,"frame{:d}.jpg".format(count)), image)
+
+    y%d = np.max(frame%d[10:10,20:20,0:2]) #(error here) meant to read a square section on each frame and find its max pixel value.
+
+    count +=1
